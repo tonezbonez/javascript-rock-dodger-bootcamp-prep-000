@@ -107,16 +107,17 @@ function moveDodgerLeft() {
 
 }
 
-function moveDodgerRight() {
+requestAnimationFrame(moveDodgerLeft)
   // implement me!
   /**
    * This function should move DODGER to the right
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
-
+function moveDodgerRight(){
    	var rightNumbers = dodger.style.left.replace('px', '')
    	var right = parseInt(rightNumbers, 10)
-   	if (right < 360) {
+
+    if (right < 360) {
    	dodger.style.left = `${right +4}px`
     }
 
