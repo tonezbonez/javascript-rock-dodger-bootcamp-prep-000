@@ -80,14 +80,14 @@ function endGame() {
 
 function moveDodger(e) {
   e.preventDefault();
-  e.stopPropagation();
-   window.addEventListener('keydown', function(e) {
-     if (e.which === LEFT_ARROW) {
+  e.stopPropalgation();
+  
+     if (e.which === 37) {
        moveDodgerLeft()
-     } else if (e.which === RIGHT_ARROW) {
+     } if (e.which === 39) {
        moveDodgerRight()
      }
-   })
+   
 }
 
 function moveDodgerLeft() {
