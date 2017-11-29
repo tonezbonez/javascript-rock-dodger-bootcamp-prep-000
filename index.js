@@ -8,6 +8,11 @@ const ROCKS = []
 const START = document.getElementById('start')
 var gameInterval = null
 
+function positionToInteger(p) {
+  return parseInt(p.split('px')[0]) || 0
+}
+
+
 
 function checkCollision(rock) {
   const top = positionToInteger(rock.style.top)
@@ -114,11 +119,11 @@ requestAnimationFrame(moveDodgerLeft)
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
 function moveDodgerRight(){
-   	var rightNumbers = dodger.style.left.replace('px', '')
+   	var rightNumbers = dodger.style.right.replace('px', '')
    	var right = parseInt(rightNumbers, 10)
 
-    if (right < 360) {
-   	dodger.style.left = `${right +4}px`
+    if (right > 0) {
+   	dodger.style.left = `${right - 4}px`
     }
 
 }
@@ -127,9 +132,7 @@ function moveDodgerRight(){
  * @param {string} p The position property
  * @returns {number} The position as an integer (without 'px')
  */
-function positionToInteger(p) {
-  return parseInt(p.split('px')[0]) || 0
-}
+
 
 function start() {
   window.addEventListener('keydown', moveDodger)
